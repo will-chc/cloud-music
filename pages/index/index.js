@@ -8,17 +8,36 @@ Page({
   data: {
     //轮播图
     bannerList:[],
+    //推荐歌曲数据
+    recommendList:[],
+    //排行榜数据
+    topList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function(options) {
-    //发送轮播图区域请求
-    let result = await request("/banner",{type:2});
+    //发送轮播图区域请求,获取轮播图数据
+    let bannerResult = await request("/banner",{type:2});
     this.setData({
-      bannerList:result.banners
-    })
+      bannerList:bannerResult.banners
+    });
+    //获取推荐歌曲数据
+    let recommendResult = await request("/personalized",{limit:10});
+    this.setData({
+      recommendList:recommendResult.result
+    });
+    //获取排行榜数据
+    let resultList =[];
+    for(let i =0 ;i<5;i++){
+      let topListResult = await request("/top/list",{idx:i});
+      let topListItem = {name:topListResult.playlist.name,tracks:topListResult.playlist.tracks.slice(0,3)};
+      resultList.push(topListItem);
+      this.setData({
+        topList:resultList
+      })
+    }
   },
 
   /**

@@ -1,6 +1,10 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/login/login",
+    "pages/index/index",
+    "pages/video/video",
+    "pages/personal/personal"
+
   ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
@@ -8,5 +12,31 @@
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/static/image/tabs/tab-home.png",
+        "selectedIconPath": "/static/image/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "/static/image/tabs/select.png",
+        "selectedIconPath": "/static/image/tabs/selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人",
+        "iconPath": "/static/image/tabs/tab-my.png",
+        "selectedIconPath": "/static/image/tabs/tab-my-current.png"
+      }
+    ],
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#fff",
+    "borderStyle": "white"
+  }
 }
