@@ -1,18 +1,36 @@
 // pages/video/video.js
+import request from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    navList:[],
+    currentId:''
   },
+// 获取导航栏数据
+async getNavList(){
+  let navListData = await request('/video/group/list');
 
+  this.setData({
+    navList: navListData.data.slice(0, 14),
+    currentId: navListData.data[0].id
+  })
+},
+//获取当前导航id
+handleActive(event){
+  this.setData({
+    //转换Number
+    currentId:event.currentTarget.id*1
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+      // 获取导航栏数据
+      this.getNavList();
   },
 
   /**

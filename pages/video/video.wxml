@@ -1,2 +1,19 @@
 <!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="video-container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="search">
+      <text class="iconfont icon-sousuo1"></text>
+      <input type="text" placeholder="搜索" />
+    </view>
+    <image class="logo" src="/static/image/logo.png"></image>
+  </view>
+  <!-- 导航栏 -->
+  <scroll-view class="nav-scroll" enable-flex scroll-x>
+    <view class="navItem" wx:for="{{navList}}" wx:key="id" id="{{item.id}}" bindtap="handleActive">
+      <view class="item-container {{item.id === currentId?'active':''}}">
+        <text class="title">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

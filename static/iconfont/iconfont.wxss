@@ -142,3 +142,6 @@
 .icon-sousuo1:before {
   content: "\e623";
 }
+.icon-search:before{
+  content: "\e734"
+}

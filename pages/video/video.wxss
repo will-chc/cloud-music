@@ -1,1 +1,41 @@
 /* pages/video/video.wxss */
+.video-container .header{
+  display: flex;
+  padding: 10rpx;
+}
+.header .search{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  border: 1rpx solid #eee;
+  margin: 0 20rpx 0 50rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #d43c33;
+  border-radius: 30rpx;
+}
+.search .iconfont{
+  margin-left: 20rpx;
+}
+.search input{
+  margin-left: 50rpx;
+}
+.header image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 导航栏区域 */
+.nav-scroll{
+  display: flex;
+}
+.nav-scroll .navItem{
+  padding: 0 30rpx;
+  white-space:nowrap;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.navItem .active {
+  border-bottom: 1rpx solid #d43c33;
+}

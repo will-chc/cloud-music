@@ -2,6 +2,7 @@
 let startY = 0;
 let moveY = 0;
 let movedistance = 0;
+import request from '../../utils/request'
 Page({
 
   /**
@@ -9,17 +10,43 @@ Page({
    */
   data: {
     coverTransform:'translateY(0)',//cover动画
-    coverTransition:''
+    coverTransition:'',
+    // 用户信息
+    userInfo:{},
+    // 最近播放
+    recentPlayList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  //获取最近播放列表
   onLoad(options) {
-
+    //获取用户信息
+    if(wx.getStorageSync('userInfo')){
+      this.setData({
+        userInfo:JSON.parse(wx.getStorageSync('userInfo'))
+      });
+    this.getRecentPlayList(this.data.userInfo.userId)
+    }
+    
   },
 
   // method
+
+  //获取用户最近播放列表
+  async getRecentPlayList(userId){
+    let recentPlayData = await request('/user/record',{uid:userId,type:0})
+    let index = 0;
+    let recentPlayList = recentPlayData.allData.splice(0, 10).map(item => {
+      item.id = index++;
+      return item;
+    });
+    this.setData({
+      recentPlayList
+    });
+  },
+//下拉动画
   handleTouchStart(event){
     //取消动画变换
     this.setData({
@@ -43,6 +70,12 @@ Page({
     this.setData({
       coverTransform:'translateY(0rpx)',
       coverTransition: 'transform 1s linear'
+    })
+  },
+  // 跳转登录页面
+  toLogin(){
+    wx.navigateTo({
+      url: '/pages/login/login',
     })
   },
 

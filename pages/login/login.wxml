@@ -7,14 +7,14 @@
     <view class="inputContainer">
       <view class="inputItem">
         <view class="title">手机号码</view>
-        <input type="text" placeholder="请输入手机号码" />
+        <input type="text" placeholder="请输入手机号码" id="phone" bindinput="handleInput" />
       </view>
       <view class="inputItem">
         <view class="title">密码</view>
-        <input type="text" placeholder="请输入密码" />
+        <input type="password" placeholder="请输入密码" id="password"  bindinput="handleInput"/>
       </view>
     </view>
-    <button class="submit-btn">登录</button>
+    <button class="submit-btn" bindtap="handleSubmit">登录</button>
     <view class="forget-password">忘记密码</view>
   </view>
   <view class="register-section">
