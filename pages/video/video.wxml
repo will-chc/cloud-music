@@ -9,10 +9,69 @@
     <image class="logo" src="/static/image/logo.png"></image>
   </view>
   <!-- 导航栏 -->
-  <scroll-view class="nav-scroll" enable-flex scroll-x>
-    <view class="navItem" wx:for="{{navList}}" wx:key="id" id="{{item.id}}" bindtap="handleActive">
+  <scroll-view 
+  scroll-into-view="{{'A'+currentId}}"
+  scroll-with-animation
+  class="nav-scroll" 
+  enable-flex 
+  scroll-x>
+    <view class="navItem" 
+    wx:for="{{navList}}"
+     wx:key="id" 
+     id="{{'A'+item.id}}" 
+     data-id='{{item.id}}' 
+     bindtap="changeNav">
       <view class="item-container {{item.id === currentId?'active':''}}">
         <text class="title">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- video区域 -->
+  <scroll-view 
+  scroll-y 
+  class="video-container" 
+  refresher-enabled 
+  bindrefresherrefresh="handleRefresh"
+  refresher-triggered="{{refresher}}"
+  bindscrolltolower="handleTolower"
+  >
+    <view class="videoitem" wx:for="{{videoList}}" wx:key="id">
+      <video 
+      wx:if="{{item.data.vid === videoId}}"
+      id="{{item.data.vid}}"
+       src="{{item.data.urlInfo.url}}"
+       bindplay="handlePlay"
+       poster="{{item.data.coverUrl}}"
+       object-fit="cover"
+       bindtimeupdate="handleUpdate"
+       bindended="handleEnded"
+       ></video>
+       <!-- 性能优化:image取代video显示 -->
+       <image
+       wx:else
+        src="{{item.data.coverUrl}}"
+       id="{{item.data.vid}}"
+       bindtap="handlePlay"
+       ></image>
+      <view class="vidoeInfo">
+        <view class="tit">{{item.data.title}}</view>
+        <view class="footer">
+          <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+          <text class="name">{{item.data.creator.nickname}}</text>
+          <view class="button">
+            <view class="share">
+            <button class="share-btn" open-type="share"> <text class="iconfont icon-xuanxiang"></text></button>
+            </view>
+            <view class="comment">
+              <text class="iconfont icon-comment"></text>
+              <text class="count">{{item.data.commentCount}}</text>
+            </view>
+            <view class="praised">
+              <text class="iconfont icon-xihuan"></text>
+              <text class="count">{{item.data.praisedCount}}</text>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
   </scroll-view>

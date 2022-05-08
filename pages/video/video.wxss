@@ -28,6 +28,7 @@
 /* 导航栏区域 */
 .nav-scroll{
   display: flex;
+  height: 60rpx;
 }
 .nav-scroll .navItem{
   padding: 0 30rpx;
@@ -37,5 +38,76 @@
   line-height: 60rpx;
 }
 .navItem .active {
+  height: 60rpx;
+  box-sizing: border-box;
   border-bottom: 1rpx solid #d43c33;
 }
+
+/* 视频区域 */
+.video-container{
+  margin-top: 30rpx;
+  /* 计算高度 */
+  /* scroll-y需要设定高度 */
+  height: calc(100vh - 150rpx);
+}
+.videoitem {
+  padding :0 3%;
+}
+.videoitem video {
+  border-radius: 10rpx;
+  width:100%;
+  height: 360rpx;
+}
+.videoitem image{
+  border-radius: 10rpx;
+  width:100%;
+  height: 360rpx;
+}
+.videoitem .vidoeInfo .tit{
+  height: 80rpx;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  max-width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vidoeInfo .footer{
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+  display: flex;
+  width: 100%;
+}
+.footer .avatar{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: center;
+}
+.footer .name{
+  height: 60rpx;
+  line-height: 60rpx;
+    font-size: 26rpx;
+    margin-left: 20rpx;
+}
+.footer .button {
+    margin-left: auto;
+}
+.praised,.comment,.share{
+  display: block;
+  float: right;
+  margin-left: 30rpx;
+  position: relative;
+}
+.footer .count{
+  font-size: 20rpx;
+  position: absolute;
+  top: -18rpx;
+}
+.share-btn{
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+

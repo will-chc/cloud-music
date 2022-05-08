@@ -54,7 +54,7 @@ Page({
     };
     //后端验证
     // 发送请求
-    let result = await request('/login/cellphone',{phone:this.data.phone,password:this.data.password})
+    let result = await request('/login/cellphone',{phone:this.data.phone,password:this.data.password,isLogin:true});
     if(result.code === 200){
       wx.showToast({
         title: '登录成功',
