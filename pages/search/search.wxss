@@ -1,0 +1,123 @@
+/* pages/search/search.wxss */
+.search-container{
+  padding: 0 20rpx;
+}
+.header{
+  position: relative;
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding:10rpx 0;
+}
+.header .cancel{
+  position: absolute;
+  right: 0;
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+.input-container{
+  position: relative;
+  width: 580rpx;
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 20rpx;
+}
+.input-container text{
+  margin-right: 20rpx;
+}
+input{
+  font-size: 26rpx;
+}
+.placeholder{
+  font-size: 30rpx;
+}
+.close{
+  font-size: 36rpx;
+  width: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  position: absolute;
+  text-align: right;
+  right: 0;
+  
+}
+
+/* 模糊搜索结果 */
+.searchContent .header{
+  color: #d43c33;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.contentItem {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  display: flex;
+  border-bottom: 1rpx solid #eee; 
+}
+.result{
+  flex: 1;
+  margin-left: 20rpx;
+}
+/* 历史记录 */
+.history-container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  line-height: 50rpx;
+}
+.history-container .tag{
+  font-size: 30rpx;
+}
+.history-item{
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #eee;
+  border-radius: 10rpx;
+  padding:0 20rpx;
+  font-size: 30rpx;
+  margin-left:20rpx ;
+  margin-bottom: 20rpx;
+}
+.history-container .iconfont{
+  position: absolute;
+  right: 15rpx;
+  bottom: 10rpx;
+  font-size: 36rpx;
+}
+
+/* 热搜榜 */
+.topSearchList-container .header{
+  display: block;
+  font-size: 34rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #cce;
+}
+.topList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.topList .item{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.topList .iconfont{
+  font-size: 30rpx;
+}
+.topList .order{
+  margin-left: 20rpx;
+}
+.searchPic{
+  width: 35rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}

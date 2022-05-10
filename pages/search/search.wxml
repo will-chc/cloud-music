@@ -1,0 +1,49 @@
+<!--pages/search/search.wxml-->
+<view class="search-container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="input-container">
+      <text class="iconfont icon-sousuo"></text>
+      <input type="text" placeholder="{{placeHolderContent}}" placeholder-class="placeholder" bindinput="handleInput" />
+      <text hidden="{{!searchKeyWord}}" bindtap="closeSearch" class="close">x</text>
+    </view>
+    <view class="cancel" bindtap="backToVideo">取消</view>
+  </view>
+  <!-- 模糊搜索显示结果 -->
+  <block wx:if="{{searchList.length}}">
+    <view class="searchContent">
+      <view class="header">
+        <text class="header-tips">搜索内容：{{searchKeyWord}}</text>
+      </view>
+      <view class="content">
+        <view class="contentItem" wx:for="{{searchList}}" wx:key="id">
+          <text class="iconfont icon-sousuo"></text>
+          <text class="result">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 热搜榜 -->
+  <block wx:else>
+    <!-- 历史记录 -->
+    <view class="history-container" wx:if="{{searchHistory.length}}">
+      <text class="tag">历史:</text>
+      <view class="history-item" wx:for="{{searchHistory}}" wx:key="item">
+        {{item}}
+      </view>
+      <text class="iconfont icon-shanchu" bindtap="clearHistory"></text>
+    </view>
+    <view class="topSearchList-container">
+      <view class="header">
+        <text class="title">热搜榜</text>
+        <view class="topList">
+          <view class="item" wx:for="{{topList}}" wx:key="item.searchWord">
+            <text class="order">{{index+1+'. '}}</text>
+            <text class="keyWord">{{item.searchWord}}</text>
+            <image wx:if="{{item.iconUrl}}" class="searchPic" src="{{item.iconUrl}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

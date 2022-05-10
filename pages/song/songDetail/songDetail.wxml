@@ -1,0 +1,30 @@
+<!--pages/song/songDetail/songDetail.wxml-->
+<view class="songDetail-container">
+<!-- 头部 -->
+  <view class="author">{{musicInfo.ar[0].name}}</view>
+  <!-- 黑胶唱片区域 -->
+  <view class="circle"></view>
+  <image class="needle {{isPlay&&'needlePlay'}}" src="/static/image/songDetail/needle.png"></image>
+  <view class="disc-container {{isPlay&&'disc-container-animation'}}">
+    <image class="disc" src="/static/image/songDetail/disc.png"></image>
+    <image class="songPic" src="{{musicInfo.al.picUrl}}"></image>
+  </view>
+  <!-- 进度条 -->
+  <view class="processContainer">
+  <text>{{currentTime}}</text>
+  <view class="process">
+    <view class="currentProcess" style="width: {{currentWidth+'rpx'}};"><view class="process-circle"></view></view>
+  </view>
+  <text>{{durationTime}}</text>
+  </view>
+  <!-- 底部控制栏 -->
+  <view class="controlMenu">
+    <text class="iconfont icon-random"></text>
+    <text class="iconfont icon-diyigeshipin" data-type="pre" bindtap="handleswitch"></text>
+    <text class="iconfont {{isPlay?'icon-zanting':'icon-kaishi'}} big"
+    bindtap="handlePlaySong"
+    ></text>
+    <text class="iconfont icon-zuihouyigeshipin" data-type="next" bindtap="handleswitch"></text>
+    <text class="iconfont icon-liebiao"></text>
+  </view>
+</view>

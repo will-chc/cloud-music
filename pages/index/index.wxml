@@ -9,7 +9,7 @@
 
   <!-- 图标导航区域 -->
   <view class="navContainer">
-    <view class="navitem">
+    <view class="navitem" bindtap="handleRecommend">
       <text class="iconfont icon-tuijian"></text>
       <text>每日推荐</text>
     </view>

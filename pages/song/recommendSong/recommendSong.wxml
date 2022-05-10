@@ -1,0 +1,34 @@
+<!--pages/recommendSong/recommendSong.wxml-->
+<view class="recommend-song-container">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="/static/image/recommendSong.jpg"></image>
+    <view class="date">
+      <text class="day">{{day}}/</text>
+      <text class="mouth">{{mouth}}</text>
+    </view>
+  </view>
+  <!-- 推荐歌曲列表 -->
+  <view class="songList">
+    <view class="top">
+      <text class="playall-btn">播放全部</text>
+      <text class="select-more">多选</text>
+    </view>
+    <scroll-view scroll-y class="scroll-song">
+      <view class="scroll-item"
+       wx:for="{{recommendSongList}}"
+        wx:key="id"
+        data-songid="{{item.id}}"
+        data-index="{{index}}"
+        bindtap="handleToDetail"
+      >
+        <image src="{{item.album.picUrl}}"></image>
+        <view class="songInfo">
+          <text class="songName">{{item.name}}</text>
+          <text class="author">{{item.artists[0].name}}</text>
+        </view>
+        <text class="iconfont icon-xuanxiang"></text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

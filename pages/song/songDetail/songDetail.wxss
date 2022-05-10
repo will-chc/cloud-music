@@ -1,0 +1,137 @@
+/* pages/song/songDetail/songDetail.wxss */
+/* 头部 */
+.songDetail-container{
+  height: 100vh;
+  background-color: #bbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.songDetail-container .author{
+  text-align: center;
+}
+.circle{
+  z-index: 100;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+}
+.needle{
+  z-index: 99;
+  position: relative;
+  top:-20rpx;
+  left: 60rpx;
+  width: 192rpx;
+  height: 274rpx;
+  /* 摇杆的不播放位置 */
+  /* 旋转中心 */
+  transform-origin: 30rpx 0;
+  transform: rotate(-20deg);
+  /* 变换过渡 */
+  transition: transform 1s;
+}
+/* 播放时摇杆位置 */
+.needlePlay{
+  transform: rotate(0deg);
+}
+
+.disc-container{
+  position: relative;
+  top:-170rpx;
+  width: 598rpx;
+  height: 598rpx;
+}
+/* 黑胶唱片动画(旋转) */
+.disc-container-animation{
+  animation: disc 4s linear infinite;
+  /* 延迟等待摇杆动画 */
+  animation-delay: 1s;
+}
+/* 设置动画帧 */
+@keyframes disc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.disc-container .disc{ 
+  width: 100%;
+  height: 100%;
+}
+.disc-container .songPic{
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+  /* 父元素中居中 */
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+/* 进度条 */
+.processContainer{
+  position: absolute;
+  bottom: 200rpx;
+  margin: 0 auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 640rpx;
+  display: flex;
+  flex-direction: row;
+}
+.processContainer .process{
+  position: relative;
+  width: 450rpx;
+  height: 4rpx;
+  background: rgba(0, 0, 0, 0.4);
+  margin: auto 10rpx;
+}
+.process .currentProcess{
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100rpx; */
+  height: 4rpx;
+  background-color: red;
+  z-index: 1;
+}
+.process-circle{
+  position: absolute;
+  right: -12rpx;
+  top:-6rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* 底部控制菜单 */
+.controlMenu {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  border-top: 1rpx solid #fff;
+  width: 100%;
+  display: flex;
+}
+.controlMenu text{
+  width: 25%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx;
+}
+.controlMenu .big{
+  font-size: 80rpx;
+}
+
+

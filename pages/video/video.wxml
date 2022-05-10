@@ -4,7 +4,7 @@
   <view class="header">
     <view class="search">
       <text class="iconfont icon-sousuo1"></text>
-      <input type="text" placeholder="搜索" />
+      <input type="text" placeholder="搜索" bindfocus="handleFocus" />
     </view>
     <image class="logo" src="/static/image/logo.png"></image>
   </view>

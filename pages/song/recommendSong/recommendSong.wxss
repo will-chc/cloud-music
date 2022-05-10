@@ -1,0 +1,76 @@
+/* pages/recommendSong/recommendSong.wxss */
+page{
+  height: 100%;
+}
+/* header */
+.recommend-song-container .header{
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+}
+.header image{
+  width: 100%;
+  height: 300rpx;
+}
+.header .date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15rpx;
+  margin-left: -100rpx;
+  width: 200rpx;
+  height: 30rpx;
+  text-align: center;
+}
+
+/* songList */
+.songList{
+  position: relative;
+  top: -20rpx;
+  padding: 0 20rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.songList .top{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.top .select-more{
+  float: right;
+}
+/* 推荐歌曲内容区 */
+.scroll-song {
+  height: calc(100vh - 380rpx);
+}
+.scroll-song .scroll-item{
+  position: relative;
+  display: flex;
+  margin-top: 20rpx;
+}
+.scroll-item image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+.scroll-item .songInfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40rpx;
+}
+.songInfo text {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  max-width: 500rpx;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.scroll-item .iconfont{
+  position: absolute;
+  right: 0;
+  width: 40rpx;
+  text-align: right;
+  line-height: 80rpx;
+}
+

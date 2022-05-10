@@ -149,9 +149,12 @@ handleTolower(){
     videoList
   })
 },
-
-
-
+//搜索框获取焦点时跳转搜索页面
+handleFocus(){
+  wx.navigateTo({
+    url: '/pages/search/search',
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
