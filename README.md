@@ -54,4 +54,6 @@
 >   
 >   - 使用页面通讯获取推荐页面的歌曲数据进行页面歌曲切换
 
-![](static/md/first.png)
+![](static/md/first.png)![](static/md/second.png)
+![](static/md/third.png)![](static/md/fourth.png)
+![](static/md/recommend.png)![](static/md/play.png)
